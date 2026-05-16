@@ -222,14 +222,83 @@ select,input{
   margin-bottom:16px;
 }
 
-@media(max-width:800px){
+/* Tablet Landscape */
+@media(max-width:1024px){
 
   .calendar{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(7,minmax(90px,1fr));
+    overflow-x:auto;
+  }
+}
+
+/* Mobile Landscape */
+@media(max-width:900px) and (orientation:landscape){
+
+  .calendar{
+    grid-template-columns:repeat(7,minmax(85px,1fr));
+    overflow-x:auto;
+  }
+
+  .day{
+    min-height:85px;
+    padding:8px;
+  }
+}
+
+/* Mobile Portrait */
+@media(max-width:700px) and (orientation:portrait){
+
+  .container{
+    padding:12px;
+  }
+
+  .toolbar{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .toolbar select,
+  .toolbar input,
+  .toolbar button{
+    width:100%;
+  }
+
+  .calendar{
+    grid-template-columns:repeat(7,minmax(62px,1fr));
+    gap:6px;
+    overflow-x:auto;
+    padding-bottom:6px;
+  }
+
+  .day{
+    min-height:78px;
+    padding:6px;
+    border-radius:10px;
+  }
+
+  .day-number{
+    font-size:13px;
+  }
+
+  .day-expense{
+    font-size:13px;
+  }
+
+  .day-header{
+    font-size:12px;
+    padding:4px;
+  }
+
+  .summary{
+    grid-template-columns:1fr;
   }
 
   .household-row{
     grid-template-columns:1fr;
+  }
+
+  .modal-content{
+    padding:16px;
   }
 }
 </style>
